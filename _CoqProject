@@ -1,0 +1,4 @@
+-R theories ""
+theories/LinearOrder.v
+theories/AlgebraRelations.v
+theories/IntervalAlgebra.v
