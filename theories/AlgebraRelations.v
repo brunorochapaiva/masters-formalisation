@@ -17,6 +17,28 @@ Inductive rel_single : Set :=
 | dual  : rel_basic -> rel_single
 | e     : rel_single.
 
+
+Definition eq_rel_basic : rel_basic -> rel_basic -> bool :=
+  fun r q =>
+    match r , q with
+    | basic_b , basic_b => true
+    | basic_m , basic_m => true
+    | basic_o , basic_o => true
+    | basic_s , basic_s => true
+    | basic_f , basic_f => true
+    | basic_d , basic_d => true
+    | _       , _       => false
+    end.
+
+Definition eq_rel_single : rel_single -> rel_single -> bool :=
+  fun r q =>
+    match r , q with
+    | basic r' , basic q' => eq_rel_basic r' q'
+    | dual  r' , dual  q' => eq_rel_basic r' q'
+    | e        , e        => true
+    | _        , _        => false
+    end.
+
 Definition b : rel_single := basic basic_b.
 Definition m : rel_single := basic basic_m.
 Definition o : rel_single := basic basic_o.

@@ -1,7 +1,9 @@
 Record LinearStructure :=
-  { carrier : Set
-  ; lt      : carrier -> carrier -> Prop
+  { point   : Set
+  ; lt      : point -> point -> Prop
   }.
+
+Notation "|| L ||l" := (L.(point)) (at level 200).
 
 Notation "x <[[ L ]] y" := (L.(lt) x y) (at level 100).
 
@@ -17,9 +19,9 @@ Record LinearOrder :=
   }.
 
 Definition Ul : LinearOrder -> Set :=
-  fun L => L.(structure).(carrier).
+  fun L => L.(structure).(point).
 
-Notation "| L |l" := (Ul L) (at level 100).
+Notation "| L |l" := (Ul L) (at level 200).
 
 Notation "x <[ L ] y" := (L.(structure).(lt) x y) (at level 100).
 

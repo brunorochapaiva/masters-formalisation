@@ -2,3 +2,4 @@
 theories/LinearOrder.v
 theories/AlgebraRelations.v
 theories/IntervalAlgebra.v
+theories/Adjunction.v
